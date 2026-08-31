@@ -6,6 +6,8 @@ export function Navagation() {
 <img src={BurgerNavIcon} alt="burger menu icon" />
 
     <NavLink to= "/home">Home</NavLink>
+    <NavLink to=  "/search">Search</NavLink>
+    
 
 </>
 
