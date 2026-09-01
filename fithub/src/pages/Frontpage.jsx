@@ -15,7 +15,7 @@ export function Frontpage() {
         </h1>
         <div className={style.subtitle}>
             <span className={style.words}/>
-        <p>Train like a pro</p>
+        <p className={style.lineWrap}>Train like a pro</p>
         </div>
         </div>
         </div>
