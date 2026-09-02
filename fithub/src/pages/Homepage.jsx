@@ -1,5 +1,8 @@
 import { useFetch } from "../hooks/useFetch";
 import { useState, useEffect } from "react";
+import { Cards } from "../components/cards/Cards";
+import { Slider } from "../components/slider/Slider"
+
 
 const API_URL = "http://localhost:3000";
 
@@ -28,25 +31,8 @@ export function Homepage() {
 
   return (
     <div>
-      {Datateams.length === 0 ? (
-        <p>Ingen teams fundet.</p>
-      ) : (
-        Datateams.map((team) => (
-          <div key={team.id}>
-            <h2>{team.name}</h2>
-
-            {team.image?.url && (
-              <img
-                src={`${API_URL}${team.image.url}`}
-                alt={team.name}
-                style={{ maxWidth: "300px", height: "auto" }}
-              />
-            )}
-
-            <p><p> placeholder placeholder  placeholder placeholder placeholder placeholder </p> </p>
-          </div>
-        ))
-      )}
+      <Cards />
+      <Slider />
     </div>
   );
 }

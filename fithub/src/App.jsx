@@ -23,10 +23,8 @@ function App() {
       
      <Route path="/"  element={<Frontpage />} />
      <Route path="/"  element={<Mainlayout />}>
-
-  
       <Route path="/home"  element={<Homepage />} />
-      <Route path="/class/id"  element={<Classdetailspage />} />
+      <Route path="/class/:id"  element={<Classdetailspage />} />
       <Route path="/search"  element={<Searchpage />} />
       <Route path="/schedule"  element={<Schulepage />} />
       <Route path="/login"  element={<Loginpage />} />
