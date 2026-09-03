@@ -44,6 +44,15 @@ export function Classdetailspage() {
           <p><strong>Maks deltagere:</strong> {data.maxParticipants}</p>
         )}
       </div>
+      {fullImageUrl && (
+        <img
+          src={fullImageUrl}
+          alt={data.user.name || "Træner billede"}
+          style={{ width: "100px", height: "100px", borderRadius: "50%" }}
+        />
+      )}
+      <p><strong>Træner:</strong> {data.user?.name}</p>
+      <p><strong>Træner beskrivelse:</strong> {data.user?.description}</p>
 
       {/* Træner information */}
       {data.user?.name && (
