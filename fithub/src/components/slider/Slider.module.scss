@@ -1,0 +1,63 @@
+@use "../../globals.scss" as globals;
+
+.sliderCotainer {
+    padding: 24px 28px;
+    overflow: hidden;
+}
+
+.sliderContainer h1 {
+    margin-bottom: 22px;
+    font-size: 30px;
+}
+
+.slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+ 
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.sliderCard {
+    flex: 0 0 180px;
+    scroll-snap-align: start;
+}
+
+.sliderCard img {
+    display: block;
+    width: 178px;
+    height: 192px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.sliderCard h2 {
+    margin: 8px 0 8px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.infoBar {
+    width: 145px;
+    height: 18px;
+    background-color: globals.$color-shady-grey;
+}
+
+.info {
+    width: 80%;
+    height: 100%;
+    background-color: globals.$color-calm-pink;
+}
+
+@media (max-width: 600px) {
+    .sliderContainer {
+        padding: 22px 26px;
+    }
+    .sliderCard {
+        flex-basis: 176px;
+    }
+}
+    

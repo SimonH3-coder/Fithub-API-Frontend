@@ -26,7 +26,7 @@ function App() {
       <Route path="/home"  element={<Homepage />} />
       <Route path="/class/:id"  element={<Classdetailspage />} />
       <Route path="/search"  element={<Searchpage />} />
-      <Route path="/schedule"  element={<Schulepage />} />
+      <Route path="/schedule/:id"  element={<Schulepage />} />
       <Route path="/login"  element={<Loginpage />} />
       </Route>
     </Routes>

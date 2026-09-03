@@ -33,9 +33,6 @@ export function Cards( { name } ) {
         <p>Intet billede tilgængeligt</p>
       )}
       <h2>{matchedTeam?.name || "Intet hold valgt"}</h2>
-           
-         
-          
             </div>
         )
     }

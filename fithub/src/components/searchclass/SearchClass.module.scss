@@ -1,0 +1,55 @@
+@use "../../globals.scss" as globals;
+
+.searchContainer {
+    padding: 16px;
+}
+
+.searchContainer h1 {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.boxSearch {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 60px;
+    padding: 0 14px;
+    border: globals.$color-shady-grey;
+    border-radius: 16px;
+    background-color: globals.$color-shady-grey;
+}
+
+.boxSearch span {
+    font-size: 36px;
+    line-height: 1;
+    transform: rotate(-20deg);
+}
+
+.boxSearch input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-size: 20px;
+}
+
+.boxSearch input::placeholder {
+   color: globals.$color-dark-dark;
+}
+
+.writes {
+    display:grid;
+    gap: 18px;
+    margin-top: 26px;
+}
+
+.write a {
+    color: globals.$color-dark-dark;
+    text-decoration: none;
+}
+
+.write h2 {
+    margin: 8px 0;
+}
+

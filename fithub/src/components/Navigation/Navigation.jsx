@@ -1,11 +1,14 @@
 import BurgerNavIcon from "../../assets/BurgerNavIcon.svg"
 import BackIcon from "../../assets/BackIcon.svg"
-import {NavLink, Navigate } from "react-router";
+import Union from "../../assets/Union.svg"
+import {NavLink} from "react-router";
 import { useState } from "react";
+import style from "./Navigation.module.scss";
 
 
 export function Navigation() {
-    const [Login, setLogin] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
+    const [isLogin, setLogin] = useState(false)
     const [error, setError] = useState("")
 
     async function login(event) {
@@ -29,19 +32,44 @@ export function Navigation() {
             return;
         }
         setLogin(true)
+        event.currentTarget.reset()
     }
-    if (Login) {
-        return <Navigate to="/login" />;
+    function logout() {
+        setLogin(false)
+        setIsOpen(false)
     }
 
 return (
 <>
-<img src={BurgerNavIcon} alt="burger menu icon" />
-<img src={BackIcon} alt="back icon" />
+<button className = {style.burgerButton}
+onClick={()=> setIsOpen(true)}
+aria-label= "Åben navigationmenu"
+>
+    <img src={BurgerNavIcon} alt="burger menu icon" />
 
-    <NavLink to= "/home">Home</NavLink>
-    <NavLink to=  "/search">Search</NavLink>
-    <h1>Log in</h1>
+</button>
+
+{isOpen && (
+    <div className={style.close}>
+        <button className={style.closeButton}
+        onClick={()=> setIsOpen(false)}
+        aria-label= "Luk navigationmenu"
+        >
+            <img src={Union} alt="close icon" />
+            <img src={BackIcon} alt="back icon" />
+        </button>
+
+        <nav className={style.navigation}>
+            <NavLink to= "/home">Home</NavLink>
+             <NavLink to=  "/search">Search</NavLink>
+        
+
+        {isLogin && (
+            <NavLink to="/schedule/1">My Schedule</NavLink>
+        )}
+        {!isLogin ? (
+            <>
+             <h1>Log in</h1>
     <form onSubmit={login}>
         <input 
         id = "email"
@@ -58,11 +86,20 @@ return (
         <button type="submit">Log in</button>
     </form>
     {error && <p>{error}</p>}
-    
-
+            </>
+        ) : (
+            <button
+            className={style.logoutButton}
+            onClick={logout}
+            >
+                Log out
+            </button>
+        )}
+        </nav>
+    </div>
+)}
 </>
+
 )
-
-
 }
 

@@ -31,7 +31,9 @@ export function Homepage() {
 
   return (
     <div>
+      <h1>Popular classes</h1>
       <Cards />
+      <h1>Classes for you</h1>
       <Slider />
     </div>
   );

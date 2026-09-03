@@ -1,0 +1,70 @@
+@use "../../globals.scss" as globals;
+
+.burgerButton,
+.closeButton {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.burgerButton img,
+.closeButton img {
+    width: 22px;
+}
+
+.close {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background-color: globals.$color-shady-grey;
+    padding: 22px;
+}
+
+.closeButton {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 250px;
+    margin: 130px auto 0;
+}
+
+.navigation a {
+    color: globals.$color-dark-dark;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.navigation h1 {
+    margin: 4px 0 0;
+    font-size: 16px;
+}
+
+.navigation form {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.navigation input {
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid globals.$color-shady-grey;
+    border-radius: 7px;
+}
+
+.navigation form button,
+.logoutButton {
+    align-self: flex-end;
+    border: 0;
+    border-radius: 7px;
+    padding: 7px 12px;
+    background-color: globals.$color-calm-pink;
+    color: globals.$color-shady-grey;
+    cursor: pointer;
+}

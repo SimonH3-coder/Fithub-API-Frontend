@@ -1,5 +1,7 @@
 import {useFetch } from "../hooks/useFetch";
 import { useState, useEffect } from "react";
+import { Slider } from "../components/slider/Slider";
+import { SearchClass } from "../components/searchclass/SearchClass";
 
 const API_URL = "http://localhost:3000";
 
@@ -25,6 +27,12 @@ export function Searchpage() {
     
     return (
         <div>
+        <SearchClass />
+        <h1>Popular classes</h1>
+        <Slider />
+    
+
+        <div>
         <h1>Search</h1>
         {Datasearch.length === 0 ? (
             <p>Ingen users fundet.</p>
@@ -47,6 +55,7 @@ export function Searchpage() {
         ))
 
         )}
+    </div>
     </div>
     )
 }
