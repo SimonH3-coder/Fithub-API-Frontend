@@ -1,0 +1,10 @@
+@use "../globals.scss" as globals;
+.schulecontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px 28px;
+    font-family: "Roboto", sans-serif;
+
+}
+

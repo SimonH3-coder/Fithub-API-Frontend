@@ -2,6 +2,7 @@ import {useFetch } from "../hooks/useFetch";
 import { useState, useEffect } from "react";
 import { Slider } from "../components/slider/Slider";
 import { SearchClass } from "../components/searchclass/SearchClass";
+import style from "../pages/Searchpage.module.scss";
 
 const API_URL = "http://localhost:3000";
 
@@ -26,36 +27,43 @@ export function Searchpage() {
     console.log("Datasearch", Datasearch);
     
     return (
-        <div>
+        <div className={style.searchpagecontainer}>
         <SearchClass />
-        <h1>Popular classes</h1>
+
+        <h1 className={style.searchtitle}>Popular classes</h1>
         <Slider />
+
+        <section className={style.searchtrainer}>
+            <h2 className={style.heading}>Popular trainers</h2>
     
 
-        <div>
-        <h1>Search</h1>
+      
         {Datasearch.length === 0 ? (
             <p>Ingen users fundet.</p>
         ) : (
             Datasearch.map((user) => (
-                <div key={user.id}>
-                    <h2>{user.name}</h2>
+                <article className={style.cardtrainer} key={user.id}>
+                    
+                    {user.image?.url && (
+                        <img
+                        className={style.picture}
+                src={`${API_URL}${user.image.url}`}
+                alt={user.name}
+                />
+             )}
+             <div className={style.details}>
+             <h2>{user.name}</h2>
                     <p>A highly experienced yoya instructor
                         specializing in fluid Flow Yoga, guiding 
                         student width grace and mindfulness
                     </p>
-                    {user.image?.url && (
-                        <img
-                src={`${API_URL}${user.image.url}`}
-                alt={user.name}
-                style={{ maxWidth: "300px", height: "auto" }}
-              />
+                    </div>
+                   
+                </article>
+            ))
             )}
-        </div>
-        ))
-
-        )}
-    </div>
+        
+    </section>
     </div>
     )
 }

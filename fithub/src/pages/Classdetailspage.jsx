@@ -1,7 +1,7 @@
 import {useFetch } from "../hooks/useFetch";
-
 import { useParams } from "react-router";
 import { NavLink } from "react-router";
+import style from "../pages/Classdetailspage.module.scss";
 
 const API_URL = "http://localhost:3000";
 
@@ -20,46 +20,59 @@ export function Classdetailspage() {
   const fullImageUrl = imagePath ? `${API_URL}${imagePath}` : null;
 
   return (
-    <div className="class-details-container">
-      {/* 3. Billedvisning */}
-      {fullImageUrl ? (
-        <img
-          src={fullImageUrl}
-          alt={data.name || "Hold billede"}
-          style={{ width: "100%", maxHeight: "400px", objectFit: "cover" }}
-        />
-      ) : (
-        <p>Intet billede tilgængeligt</p>
-      )}
-      <button><NavLink to="/schedule">Sign Up</NavLink></button>
-
-      {/* Holdets detaljer */}
-      <h2>{data.name}</h2>
-      <p>{data.description}</p>
-
-      <div className="info">
-        <p><strong>Dag:</strong> {data.day}</p>
-        <p><strong>Tid:</strong> {data.time}</p>
-        {data.maxParticipants && (
-          <p><strong>Maks deltagere:</strong> {data.maxParticipants}</p>
-        )}
-      </div>
+    
+  <main className={style.classdetailscontainer}>
+    <section className={style.img3}>
+       {/* 3. Billedvisning */}
       {fullImageUrl && (
         <img
           src={fullImageUrl}
-          alt={data.user.name || "Træner billede"}
-          style={{ width: "100px", height: "100px", borderRadius: "50%" }}
+          alt={data.name || "Hold billede"}
         />
       )}
-      <p><strong>Træner:</strong> {data.user?.name}</p>
-      <p><strong>Træner beskrivelse:</strong> {data.user?.description}</p>
 
-      {/* Træner information */}
-      {data.user?.name && (
-        <p><strong>Træner:</strong> {data.user.name}</p>
-      )}
-    </div>
-  );
+      <div className={style.imgshow}>
+        <h1>{data.name}</h1>
+
+        <button className={style.button}>
+          <NavLink to={`/schedule/${id}`}>Sign up</NavLink>
+        </button>
+      </div>
+    </section>
+
+    <section className={style.info}>
+      <h2>Schedule</h2>
+
+      <div className={style.time}>
+        <strong>{data.day}</strong>
+        <strong>{data.time}</strong>
+      </div>
+
+      <p>{data.description}</p>
+
+      <h2>Trainer</h2>
+
+      <div className={style.trainer}>
+        {fullImageUrl && (
+          <img src={fullImageUrl} alt={data.user?.name || "Træner"} />
+        )}
+
+        <div>
+          <h3>{data.user?.name}</h3>
+          <p>{data.user?.description}</p>
+          <p> A highly experienced yoya instructor specializing
+            in fluid Flow Yoga, guiding students with grace and mindfulness.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+);
 }
+
+
+
+ 
+
 
 

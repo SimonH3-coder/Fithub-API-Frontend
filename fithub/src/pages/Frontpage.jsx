@@ -6,7 +6,7 @@ import style from "./Frontpage.module.scss"
 export function Frontpage() {
     return (
         <>
-        <main className={style.frontpage}>
+        <main className={style.firstpage}>
         <section className={style.phone1}>
         <div className={style.girl1}>
 <img src={cover2} alt="cover2" className={style.girlImage} />
@@ -21,7 +21,7 @@ export function Frontpage() {
         </div>
         <div className={style.picture2}>
 <img src={cover1} alt="cover1" className={style.pictureImage} />
-<button className={style.startButton}><NavLink to="/home">Start Training</NavLink></button>
+<NavLink className={style.startButton} to="/home">Start Training</NavLink>
 </div>
 </section>
 </main>

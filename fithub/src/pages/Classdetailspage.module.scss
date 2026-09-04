@@ -1,0 +1,123 @@
+@use "../globals.scss" as globals;
+
+.classdetailscontainer {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: globals.$color-shady-grey;
+    color: globals.$color-dark-dark;
+}
+
+.img3 {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+.img3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imgshow {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 53px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 17px;
+}
+
+.img3 h1 {
+    max-width: 305px;
+    margin: 0;
+    color: globals.$color-shady-grey;
+    font-size: 30px;
+    line-height: 2;
+    font-weight: 500;
+}
+
+.button {
+    flex: 0 0 auto;
+    padding: 20px 36px;
+    border: 0;
+    border-radius: 14px 0 0 14px;
+    background-color: globals.$color-shady-grey;
+    font-size: 1.33rem;
+    cursor: pointer;
+}
+
+button a {
+    color: globals.$color-dark-dark;
+    text-decoration: none;
+}
+
+.info h2 {
+    margin: 0 0 20px;
+    font-size: 1.73rem;
+    font-weight: 350;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    font-size: 1.20rem;
+}
+
+.info > p {
+    margin: 0 0 20px;
+    font-size: 1.20rem;
+    line-height: 1.5;
+}
+
+.trainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.trainer img {
+    width: 132px;
+    height: 113px;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.trainer h3 {
+    margin: 4px 0 4px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.trainer p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.1;
+}
+
+@media (max-width: 480px) {
+    .img3 {
+        height: 600px;
+    }
+    .imgshow {
+        bottom: 45px;
+        left: 38px;
+        align-items: flex-end;
+    }
+    .img3 h1 {
+        font-size: 2.5rem;
+    }
+    .button {
+        padding: 16px 28px;
+        font-size: 1.2rem;
+    }
+    .info {
+        padding: 22px 42px 32px;
+    }
+}

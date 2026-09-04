@@ -1,7 +1,7 @@
 import {useFetch} from "../hooks/useFetch";
 import { useParams } from "react-router";
-
 import { NavLink } from "react-router";
+import style from  "../pages/Schulepage.module.scss";
 
 const API_URL = "http://localhost:3000";
 
@@ -18,7 +18,7 @@ export function Schulepage() {
     
     
     return (
-        <div className="class-details-container">
+        <div className={style.schulecontainer}>
         <p><strong>Dag:</strong> {data.day}</p>
         <p><strong>Tid:</strong> {data.time}</p>
         <NavLink to="/class/:id">Flex Yoya Workout</NavLink>
